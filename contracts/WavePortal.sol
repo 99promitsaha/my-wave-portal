@@ -6,10 +6,6 @@ import "hardhat/console.sol";
 
 contract WavePortal {
     uint256 totalWaves;
-
-    /*
-     * A little magic, Google what events are in Solidity!
-     */
     event NewWave(address indexed from, uint256 timestamp, string message);
 
     /*
@@ -53,7 +49,6 @@ contract WavePortal {
         (bool success, ) = (msg.sender).call{value: prizeAmount}("");
         require(success, "Failed to withdraw money from contract.");
     }
-
     /*
      * I added a function getAllWaves which will return the struct array, waves, to us.
      * This will make it easy to retrieve the waves from our website!
